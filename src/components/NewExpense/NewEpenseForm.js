@@ -31,12 +31,24 @@ function NewExpenseForm() {
     setEnteredDate(event.target.value);
   };
 
+  //   This method sums all handler methods above with example of usage for title value
+  //   const inputChangeHandler = (id, value) => {
+  //     if (id === "title") {
+  //         setEnteredTitle(value);
+  //     } else if (id === "amount") {
+  //         setEnteredAmount(value);
+  //     } else {
+  //         setEnteredDate(value);
+  //     }
+  //   }
+
   return (
     <form>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
           <input type="text" onChange={titleChangeHandler} />
+          {/* <input type="text" onChange={ (event) => {inputChangeHandler ("title", event.target.value)}} /> */}
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
