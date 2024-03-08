@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./NewExpenseForm.css";
 
-
 //This is the same component as NewExpenseForm but it's created in the different way just to see possible code versions
 function AltExpenseForm() {
   const [enteredForm, setEnteredForm] = useState({
@@ -26,6 +25,13 @@ function AltExpenseForm() {
     }
   };
 
+  const clearForm = () => {
+    inputChangeHandler("title", "");
+    inputChangeHandler("amount", "");
+    inputChangeHandler("date", "");
+
+  };
+
   const submitHandler = (event) => {
     event.preventDefault();
 
@@ -36,6 +42,7 @@ function AltExpenseForm() {
     };
 
     console.log(enteredData);
+    clearForm();
   };
 
   return (
@@ -45,6 +52,7 @@ function AltExpenseForm() {
           <label>Title</label>
           <input
             type="text"
+            value={enteredForm.enteredTitle}
             onChange={(event) => {
               inputChangeHandler("title", event.target.value);
             }}
@@ -56,6 +64,7 @@ function AltExpenseForm() {
             type="number"
             min="0.01"
             step="0.01"
+            value={enteredForm.enteredAmount}
             onChange={(event) => {
               inputChangeHandler("amount", event.target.value);
             }}
@@ -67,6 +76,7 @@ function AltExpenseForm() {
             type="date"
             min="2020-01-01"
             max="2024-12-32"
+            value={enteredForm.enteredDate}
             onChange={(event) => {
               inputChangeHandler("date", event.target.value);
             }}

@@ -3,11 +3,9 @@ import "./NewExpense.css";
 import NewExpenseForm from "./NewEpenseForm";
 
 function NewExpense() {
-  return (
-    <div className="new-expense">
-      <NewExpenseForm />
+    return  <div className="new-expense">
+        <NewExpenseForm/>
     </div>
-  );
-}
+};
 
 export default NewExpense;
