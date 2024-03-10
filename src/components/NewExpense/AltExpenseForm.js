@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./NewExpenseForm.css";
 
 //This is the same component as NewExpenseForm but it's created in the different way just to see possible code versions
-function AltExpenseForm() {
+function AltExpenseForm(props) {
   const [enteredForm, setEnteredForm] = useState({
     enteredTitle: "",
     enteredAmount: "",
@@ -29,7 +29,6 @@ function AltExpenseForm() {
     inputChangeHandler("title", "");
     inputChangeHandler("amount", "");
     inputChangeHandler("date", "");
-
   };
 
   const submitHandler = (event) => {
@@ -41,7 +40,7 @@ function AltExpenseForm() {
       date: new Date(enteredForm.enteredDate),
     };
 
-    console.log(enteredData);
+    props.onSubmitExpenseForm(enteredData);
     clearForm();
   };
 
