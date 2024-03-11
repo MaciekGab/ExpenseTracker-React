@@ -69,7 +69,10 @@ function NewExpenseForm(props) {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button type="submit">Add expense</button>
+        <button type="button" onClick={props.onCalcelExpenseForm}>
+          Cancel
+        </button>
+        <button type="submit">Add Expense</button>
       </div>
     </form>
   );
